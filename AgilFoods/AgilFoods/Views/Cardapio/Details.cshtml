@@ -1,0 +1,34 @@
+﻿@model AgilFoods.Models.Cardapio
+
+@{
+    ViewBag.Title = "Detalhe do item do cardápio";
+}
+
+<h2>Detalhe do item do cardápio</h2>
+
+<div>
+    <h4>Cardápio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DescricaoItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescricaoItem)
+        </dd>
+
+        <dt>
+            @Html.Name("Fornecedor")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.RazaoSocial)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar item do cardápio", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar a lista de cardápio", "Index")
+</p>

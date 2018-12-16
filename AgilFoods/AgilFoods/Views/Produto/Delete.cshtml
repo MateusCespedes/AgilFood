@@ -1,0 +1,48 @@
+﻿@model AgilFoods.Models.Produto
+
+@{
+    ViewBag.Title = "Deletar Produto";
+}
+
+<h2>Deletar Produto</h2>
+
+<h3>Você deseja realmente deletar este produto?</h3>
+<div>
+    <h4>Produto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Name("Descrição")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+        <dt>
+            @Html.Name("Fornecedor")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.RazaoSocial)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Retornar a lista de produtos", "Index")
+        </div>
+    }
+</div>

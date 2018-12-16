@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AgilFoods.Models.Fornecedor>
+
+@{
+    ViewBag.Title = "Lista de Fornecedores";
+}
+
+<h2>Lista de Fornecedores</h2>
+
+<p>
+    @Html.ActionLink("Criar novo fornecedor", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.Name("Razão Social")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CNPJ)
+        </th>
+        <th>
+            @Html.Name("Endereço")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RazaoSocial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CNPJ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefone)
+        </td>
+        <td>
+            @Html.ActionLink("Editar Fornecedor", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detalhes do Fornecedor", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Deletar Fornecedor", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

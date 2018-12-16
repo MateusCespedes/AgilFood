@@ -1,0 +1,42 @@
+﻿@model AgilFoods.Models.Produto
+
+@{
+    ViewBag.Title = "Detalhes do Produto";
+}
+
+<h2>Detalhes do Produto</h2>
+
+<div>
+    <h4>Produto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Name("Descrição")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+        <dt>
+            @Html.Name("Fornecedor")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.RazaoSocial)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar Produto", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar a lista de Produtos", "Index")
+</p>

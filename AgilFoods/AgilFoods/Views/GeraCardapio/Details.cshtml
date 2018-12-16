@@ -1,0 +1,90 @@
+﻿@model AgilFoods.Models.GeraCardapio
+
+@{
+    ViewBag.Title = "Detalhe do Cardápio";
+}
+
+<h2>Detalhe do Cardápio</h2>
+
+<div>
+    <h4>GeraCardapio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Name("Fornecedor")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.RazaoSocial)
+        </dd>
+
+        <dt>
+            @Html.Name("Dia da Semana")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaSemana)
+        </dd>
+
+        <dt>
+            @Html.Name("Item 1")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemCardapio1)
+        </dd>
+
+        <dt>
+            @Html.Name("Item 2")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemCardapio2)
+        </dd>
+
+        <dt>
+            @Html.Name("Item 3")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemCardapio3)
+        </dd>
+
+        <dt>
+            @Html.Name("Item 4")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemCardapio4)
+        </dd>
+
+        <dt>
+            @Html.Name("Item 5")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemCardapio5)
+        </dd>
+
+        <dt>
+            @Html.Name("Item 6")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemCardapio6)
+        </dd>
+
+        <dt>
+            @Html.Name("Item 7")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemCardapio7)
+        </dd>
+        
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar cardápio", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar a lista de Cardápios", "Index")
+</p>

@@ -1,0 +1,64 @@
+﻿@model AgilFoods.Models.Usuario
+
+@{
+    ViewBag.Title = "Deletar Usuário";
+}
+
+<h2>Deletar Usuário</h2>
+
+<h3>Você deseja realmente deletar este usuário?</h3>
+<div>
+    <h4>Usuário</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Name("Nome")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.Name("CPF")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+
+        <dt>
+            @Html.Name("Endereço")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Setor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Setor)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar a lista de usuários", "Index")
+        </div>
+    }
+</div>

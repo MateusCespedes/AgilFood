@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AgilFoods.Models.Produto>
+
+@{
+    ViewBag.Title = "Lista de Produtos";
+}
+
+<h2>Lista de Produtos</h2>
+
+<p>
+    @Html.ActionLink("Criar novo produto", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.Name("Descrição")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor)
+        </th>
+        <th>
+            @Html.Name("Fornecedor")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fornecedor.RazaoSocial)
+        </td>
+        <td>
+            @Html.ActionLink("Editar produto", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Detalhes do produto", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Deletar produto", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>

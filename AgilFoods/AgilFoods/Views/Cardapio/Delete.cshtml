@@ -1,0 +1,40 @@
+﻿@model AgilFoods.Models.Cardapio
+
+@{
+    ViewBag.Title = "Deletar Item do Cardápio";
+}
+
+<h2>Deletar Item do Cardápio</h2>
+
+<h3>Você deseja realmente deletar este item do cardápio?</h3>
+<div>
+    <h4>Cardápio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DescricaoItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescricaoItem)
+        </dd>
+
+        <dt>
+            @Html.Name("Fornecedor")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.RazaoSocial)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar a lista de itens do cardápio", "Index")
+        </div>
+    }
+</div>

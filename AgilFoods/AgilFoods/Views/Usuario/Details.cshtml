@@ -1,0 +1,58 @@
+﻿@model AgilFoods.Models.Usuario
+
+@{
+    ViewBag.Title = "Detalhes do Usuário";
+}
+
+<h2>Detalhes do usuário</h2>
+
+<div>
+    <h4>Usuário</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.Name("CPF")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+
+        <dt>
+            @Html.Name("Endereço")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Setor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Setor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar Usuário", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar a lista de usuários", "Index")
+</p>
